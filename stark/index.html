@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Birthday Surprise 💗</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fff0f6, #f1e6ff, #ffe4ec);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      padding: 35px 7%;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .left {
+      animation: appear 1s ease;
+    }
+
+    .tag {
+      color: #b34d91;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: 1.15;
+      color: #d63384;
+      margin-bottom: 18px;
+    }
+
+    .message {
+      color: #79516e;
+      font-size: 15px;
+      line-height: 1.9;
+      max-width: 400px;
+      margin-bottom: 25px;
+    }
+
+    .cat-photo {
+      width: 210px;
+      height: 175px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 5px solid white;
+      box-shadow: 0 12px 35px #d6338425;
+      transform: rotate(-3deg);
+      transition: transform .3s;
+    }
+
+    .cat-photo:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    .right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lock-card {
+      width: min(100%, 330px);
+      padding: 35px 25px;
+      border-radius: 32px;
+      text-align: center;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: 0 20px 60px #b34d9125;
+      backdrop-filter: blur(15px);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .heart {
+      font-size: 68px;
+      cursor: pointer;
+      display: inline-block;
+      filter: drop-shadow(0 8px 12px #ff4d8d40);
+      transition: transform .3s;
+      animation: heartbeat 1.6s infinite;
+    }
+
+    .heart:hover {
+      transform: scale(1.2);
+    }
+
+    .lock-card h2 {
+      font-size: 21px;
+      color: #9b347a;
+      margin: 10px 0 5px;
+    }
+
+    .lock-card p {
+      color: #9b7893;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    #pin {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #f0c5df;
+      border-radius: 15px;
+      background: #fff8fc;
+      outline: none;
+      text-align: center;
+      font-size: 22px;
+      letter-spacing: 8px;
+      color: #b83280;
+    }
+
+    #pin:focus {
+      border-color: #d63384;
+      box-shadow: 0 0 0 3px #d6338418;
+    }
+
+    .unlock {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      background: linear-gradient(100deg, #ff5fa2, #a855d8);
+      box-shadow: 0 8px 20px #d6338430;
+      transition: transform .2s;
+    }
+
+    .unlock:hover {
+      transform: translateY(-3px);
+    }
+
+    #error {
+      color: #d63365;
+      font-size: 12px;
+      margin-top: 12px;
+      min-height: 18px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+
+    @keyframes float {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -8px; }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 35px 22px;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .left {
+        text-align: center;
+      }
+
+      .message {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cat-photo {
+        width: 180px;
+        height: 150px;
+      }
+
+      .lock-card {
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <section class="left">
+      <div class="tag">A little surprise for you ✨</div>
+
+      <h1>Happy Birthday<br>to my bestestfriend! 💗</h1>
+
+      <p class="message">
+        Someone special deserves a little magic.
+        A tiny surprise is waiting just for you.
+        Are you ready to unlock it muskan? 🎀
+      </p>
+
+      <!-- Add cat.png to the same folder -->
+      <img
+        class="cat-photo"
+        src="data:image/webp;base64,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"
+        alt="A cute birthday cat"
+        onerror="this.style.display='none'"
+      >
+    </section>
+
+    <section class="right">
+      <div class="lock-card">
+        <div class="heart" onclick="document.getElementById('pin').focus()">
+          💖
+        </div>
+
+        <h2>Heart Locked!</h2>
+        <p>Enter the secret PIN to open your surprise</p>
+
+        
+<form id="lockForm">
+    <input
+        id="pin"
+        type="password"
+        inputmode="text"
+        maxlength="4"
+        placeholder="••••"
+        autocomplete="off"
+        autocapitalize="none"
+        spellcheck="false"
+        required
+    >
+    <button class="unlock" type="submit">
+        Unlock My Surprise ✨
+    </button>
+</form>
+
+
+        <div id="error" role="status"></div>
+      </div>
+    </section>
+
+  </main>
+  <audio id="successAudio" src="success.mp3" preload="auto"></audio>
+
+<script>
+    const form = document.getElementById('lockForm');
+    const pinInput = document.getElementById('pin');
+    const error = document.getElementById('error');
+    const successAudio = document.getElementById('successAudio');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      if (pinInput.value.trim().toLowerCase() === 'dora') {
+        successAudio.play().catch(() => {}); // Play audio when password is correct
+        window.location.href = 'birthday.html';
+      } else {
+        error.textContent = 'Oops! Wrong PIN. Try again 💗';
+        pinInput.value = '';
+        pinInput.focus();
+      }
+    });
+</script>
+
+</body>
+</html>

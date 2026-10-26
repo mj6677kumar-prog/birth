@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Beautiful Memories ❤️</title>
+
+<!-- Beautiful fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff0f6, #f3e5ff, #ffe4ec);
+    color: #633b5a;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Main heading */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(45px, 8vw, 76px);
+    text-align: center;
+    color: #bd4387;
+    margin: 90px 15px 10px;
+    text-shadow: 0 0 18px #ffc1e0;
+    animation: fadeIn 2s ease;
+}
+
+.subtitle {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 27px;
+    color: #9660a5;
+    padding: 0 15px;
+}
+
+/* String of connected fairy lights */
+.lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    overflow: hidden;
+}
+
+.lights svg {
+    width: 100%;
+    height: 125px;
+    overflow: visible;
+}
+
+.wire {
+    fill: none;
+    stroke: #554553;
+    stroke-width: 2.5;
+}
+
+.bulb {
+    fill: #fff4a8;
+    stroke: #d6a53d;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 7px #ffd75e);
+    animation: glow 1.8s infinite alternate;
+}
+
+.bulb:nth-of-type(2n) {
+    animation-delay: .5s;
+}
+
+.bulb:nth-of-type(3n) {
+    animation-delay: 1s;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 3px #ffdf80);
+        opacity: .7;
+    }
+    to {
+        filter: drop-shadow(0 0 15px #ffc928);
+        opacity: 1;
+    }
+}
+
+/* Memory letter */
+.memory-card {
+    width: min(900px, 90%);
+    margin: 35px auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 25px;
+    box-shadow: 0 12px 40px rgba(157, 85, 145, 0.15);
+    animation: fadeIn 2s ease;
+}
+
+.memory-card p {
+    font-size: 16px;
+    line-height: 2.1;
+    font-weight: 300;
+    text-align: left;
+}
+
+.memory-card .special {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    font-weight: 600;
+    color: #bd4387;
+    text-align: center;
+}
+
+/* Friendship pictures */
+.gallery-title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    color: #bd4387;
+    margin: 55px 10px 25px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    width: min(1000px, 90%);
+    margin: 0 auto 50px;
+}
+
+.photo {
+    background: white;
+    padding: 10px 10px 18px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px #a56b9830;
+    transition: transform .4s, box-shadow .4s;
+}
+
+.photo:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 15px 30px #a56b9850;
+}
+
+.photo img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.photo p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    text-align: center;
+    margin: 13px 0 0;
+    color: #a34e86;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    opacity: .7;
+    pointer-events: none;
+    z-index: -1;
+    animation: floatUp 9s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: .65; }
+    100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px 45px;
+    color: #9660a5;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 { margin-top: 95px; }
+    .memory-card { padding: 22px; }
+    .memory-card p { font-size: 14px; }
+    .gallery-title { font-size: 35px; }
+}
+
+/* Beautiful Next Page Button */
+.next-page-container {
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px 60px;
+}
+
+.next-page-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 35px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #e879b5, #a66be0);
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 25px rgba(189, 67, 135, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: nextGlow 2s infinite alternate;
+}
+
+.next-page-btn span {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.next-page-btn:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 12px 35px rgba(189, 67, 135, 0.5);
+}
+
+.next-page-btn:hover span {
+    transform: translateX(6px);
+}
+
+@keyframes nextGlow {
+    from {
+        box-shadow: 0 5px 18px rgba(189, 67, 135, 0.25);
+    }
+    to {
+        box-shadow: 0 5px 30px rgba(166, 107, 224, 0.55);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Connected fairy lights -->
+<div class="lights">
+<svg viewBox="0 0 1000 125" preserveAspectRatio="none">
+    <path class="wire"
+        d="M0,5 Q125,105 250,45 T500,45 T750,45 T1000,5"/>
+
+    <g>
+        <line x1="70" y1="43" x2="70" y2="60" class="wire"/>
+        <circle cx="70" cy="68" r="9" class="bulb"/>
+
+        <line x1="180" y1="70" x2="180" y2="87" class="wire"/>
+        <circle cx="180" cy="95" r="9" class="bulb"/>
+
+        <line x1="290" y1="47" x2="290" y2="64" class="wire"/>
+        <circle cx="290" cy="72" r="9" class="bulb"/>
+
+        <line x1="400" y1="43" x2="400" y2="60" class="wire"/>
+        <circle cx="400" cy="68" r="9" class="bulb"/>
+
+        <line x1="500" y1="45" x2="500" y2="62" class="wire"/>
+        <circle cx="500" cy="70" r="9" class="bulb"/>
+
+        <line x1="610" y1="45" x2="610" y2="62" class="wire"/>
+        <circle cx="610" cy="70" r="9" class="bulb"/>
+
+        <line x1="720" y1="45" x2="720" y2="62" class="wire"/>
+        <circle cx="720" cy="70" r="9" class="bulb"/>
+
+        <line x1="830" y1="37" x2="830" y2="54" class="wire"/>
+        <circle cx="830" cy="62" r="9" class="bulb"/>
+
+        <line x1="940" y1="18" x2="940" y2="35" class="wire"/>
+        <circle cx="940" cy="43" r="9" class="bulb"/>
+    </g>
+</svg>
+</div>
+
+<h1><i>Memories ❤️</i></h1>
+<div class="subtitle">Some friendships make life more beautiful ✨</div>
+
+<section class="memory-card">
+    <p>
+        Memories are the treasures that we keep locked deep within the
+        storehouse of our souls, keeping our hearts warm when we feel lonely.
+    </p>
+
+    <p>
+        I enjoy talking to you so much, especially when we share our thoughts
+        and feelings and when you call me <b>दुष्ट 😁</b>.
+        I forget all my worries and sorrows when I am with you.
+        Our little conversations always heal me a lot.
+    </p>
+
+    <p>
+        I literally thank God for giving me a friend like you, someone who
+        never judges me and always supports me. Whenever I think of you,
+        a smile automatically appears on my face.
+    </p>
+
+    <p>
+        When you share your beautiful, sa pyara sa, golo molu mukhda,
+        like a baby panda, that moment feels so fascinating to me.
+        You are the guy I like the most, my cutest best friend. ❤️
+    </p>
+
+    <p>
+        I never ask God for anything, but I truly wish that He creates
+        a moment for us to meet someday. 🥹💗
+    </p>
+
+    <p class="special">
+        Distance may separate places, but never the hearts connected
+        by friendship. 🫶
+    </p>
+</section>
+
+<h2 class="gallery-title">Little Moments, Big Memories 📸</h2>
+
+<section class="gallery">
+    <div class="photo">
+        <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=85"
+            alt="Friends spending time together">
+        <p>Friends Forever 🫶</p>
+    </div>
+
+    <div class="photo">
+        <img
+            src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=700&q=85"
+            alt="Friends sharing happy moments">
+        <p>Our Happy Moments 🌸</p>
+    </div>
+
+    <div class="photo">
+        <img
+            src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=700&q=85"
+            alt="A beautiful celebration">
+        <p>Memories to Keep ✨</p>
+    </div>
+</section>
+
+<footer>
+    You will always have a special place in my heart. 💗
+    <br>
+    <span style="font-size:20px">Made with love, just for you ❤️</span>
+</footer>
+<audio autoplay loop>
+    <source src="memories_instrumental.mp3" type="audio/mpeg">
+</audio>
+<script>
+/* Floating hearts in the background */
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+
+    const symbols = ['💗', '💕', '✨', '💖', '🫶'];
+    heart.textContent = symbols[
+        Math.floor(Math.random() * symbols.length)
+    ];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (7 + Math.random() * 5) + 's';
+    heart.style.fontSize = (14 + Math.random() * 16) + 'px';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 12000);
+}
+
+setInterval(createHeart, 900);
+</script>
+<div class="next-page-container">
+    <a href="index.html" class="next-page-btn">
+        Back to the lock screen <span>→</span>
+    </a>
+</div>
+</body>
+</html>
